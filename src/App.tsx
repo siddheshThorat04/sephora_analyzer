@@ -1523,7 +1523,7 @@ import Logo from "./Logo.png"
 interface Message {
   type: 'user' | 'bot';
   content: string;
-  timestamp: Date;
+  timestamp?: Date;
   error?: boolean;
   sql?: string;
   query?: string;
@@ -1557,8 +1557,7 @@ export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
     {
       type: 'bot',
-      content: "Hi, I'm Sherlock AI by Acumensa Tech. I'm here to help you with Instagram Analysis of Influencers.",
-      timestamp: new Date()
+      content: "Hi, I'm Sherlock AI by Acumensa Tech. I'm here to help you with Instagram Analysis of Influencers."
     }
   ]);
   const [input, setInput] = useState<string>('');
@@ -1930,7 +1929,7 @@ export default function ChatInterface() {
 
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', gap: '12px', flexWrap: 'wrap' }}>
                       <p style={{ margin: 0, fontSize: '11px', opacity: 0.7 }}>
-                        {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        {/* {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} */}
                       </p>
                       {message.hasExport && message.type === 'bot' && !message.error && (
                         <button
