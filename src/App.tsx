@@ -1566,8 +1566,8 @@ export default function ChatInterface() {
   const [exportingIndex, setExportingIndex] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // const BACKEND_URL = 'https://sherlockbe2-0.onrender.com'; 
-const BACKEND_URL = 'http://localhost:3000'; 
+  const BACKEND_URL = 'https://sherlockbe2-0.onrender.com'; 
+// const BACKEND_URL = 'http://localhost:3000'; 
   const scrollToBottom = (): void => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
