@@ -1519,7 +1519,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Database, Loader2, Download, Sparkles, Brain } from 'lucide-react';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import Logo from "./Logo.png"
 interface Message {
   type: 'user' | 'bot';
   content: string;
@@ -1870,7 +1870,7 @@ export default function ChatInterface() {
     "Who are the top 5 creators by views?",
     "whats the highest watched post",
     "Show me posts with highest views and by which creator",
-    "What's the distribution of posts by brand?"
+    "give me all fields for post data for brand muscleblaze"
   ];
 
   const handleExampleClick = (query: string): void => {
@@ -1878,17 +1878,18 @@ export default function ChatInterface() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '20px' }}>
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #ffffffff 0%, #f9f9f9ff 100%)', padding: '20px' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto', height: 'calc(100vh - 40px)', display: 'flex', flexDirection: 'column', background: 'white', borderRadius: '20px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', overflow: 'hidden' }}>
         
-        <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '24px', color: 'white' }}>
+        <div style={{ background: 'linear-gradient(135deg, #f5b216ff 0%, #eb9b33ff 100%)', padding: '24px', color: 'white' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '16px', padding: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)' }}>
-              <Brain size={32} />
-            </div>
+              {/* <Brain size={32} /> */}
+                <img src={Logo} alt="" height={100} />
+            </div >
             <div>
-              <h1 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold' }}>AI Database Assistant</h1>
-              <p style={{ margin: '4px 0 0', fontSize: '14px', opacity: 0.95 }}>I'll automatically visualize data when it helps! ✨</p>
+              <h1 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold' }}>Sherlock Instagram Analyzer</h1>
+              <p style={{ margin: '4px 0   0', fontSize: '14px', opacity: 0.95 }}>I'll automatically visualize data when it helps! ✨</p>
             </div>
           </div>
         </div>
@@ -2081,8 +2082,8 @@ export default function ChatInterface() {
               style={{
                 padding: '14px 18px',
                 background: input.trim() && !isLoading 
-                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
-                  : '#d1d5db',
+                  ? 'linear-gradient(135deg, #eabb2cff 0%, #eabb2cff 100%)' 
+                  : '#eabb2cff',
                 color: 'white',
                 border: 'none',
                 borderRadius: '12px',
