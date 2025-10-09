@@ -1557,7 +1557,7 @@ export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
     {
       type: 'bot',
-      content: "Hi! I'm your AI database assistant 🤖 Ask me anything about your Instagram data, and I'll automatically decide if a visualization would help make the insights clearer!",
+      content: "Hi, I'm Sherlock AI by Acumensa Tech. I'm here to help you with Instagram Analysis of Influencers.",
       timestamp: new Date()
     }
   ]);
@@ -1870,7 +1870,7 @@ export default function ChatInterface() {
     "Who are the top 5 creators by views?",
     "whats the highest watched post",
     "Show me posts with highest views and by which creator",
-    "give me all fields for post data for brand muscleblaze"
+    "Give me all fields for post data for brand muscleblaze"
   ];
 
   const handleExampleClick = (query: string): void => {
@@ -1888,8 +1888,8 @@ export default function ChatInterface() {
                 <img src={Logo} alt="" height={100} />
             </div >
             <div>
-              <h1 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold' }}>Sherlock Instagram Analyzer</h1>
-              <p style={{ margin: '4px 0   0', fontSize: '14px', opacity: 0.95 }}>I'll automatically visualize data when it helps! ✨</p>
+              <h1 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold' }}>Sherlock AI Insta Analyzer</h1>
+              <p style={{ margin: '4px 0   0', fontSize: '14px', opacity: 0.95 }}>Your Instagram Influencer Analyzer !</p>
             </div>
           </div>
         </div>
