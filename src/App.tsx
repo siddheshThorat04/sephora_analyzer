@@ -1566,8 +1566,8 @@ export default function ChatInterface() {
   const [exportingIndex, setExportingIndex] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const BACKEND_URL = 'https://sherlockbe2-0.onrender.com'; 
-
+  // const BACKEND_URL = 'https://sherlockbe2-0.onrender.com'; 
+const BACKEND_URL = 'http://localhost:3000'; 
   const scrollToBottom = (): void => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -1785,8 +1785,8 @@ export default function ChatInterface() {
               <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 60 }}>
                 <defs>
                   <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#667eea" stopOpacity={1} />
-                    <stop offset="100%" stopColor="#764ba2" stopOpacity={0.8} />
+                    <stop offset="0%" stopColor="#3a3333ff" stopOpacity={1} />
+                    <stop offset="100%" stopColor="#d47f00ff" stopOpacity={0.8} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -1843,7 +1843,7 @@ export default function ChatInterface() {
                   labelLine={true}
                   label={(entry: any) => `${entry.name}: ${entry.value.toLocaleString()}`}
                   outerRadius={100}
-                  fill="#8884d8"
+                  fill="#deb202ff"
                   dataKey="value"
                 >
                   {data.map((entry: any, index: number) => (
@@ -1903,7 +1903,7 @@ export default function ChatInterface() {
               <div style={{ 
                 maxWidth: '80%', 
                 background: message.type === 'user' 
-                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
+                  ? 'linear-gradient(135deg, #111113ff 0%, #000000ff 100%)' 
                   : (message.error ? '#fee2e2' : 'white'),
                 color: message.type === 'user' ? 'white' : (message.error ? '#991b1b' : '#1f2937'),
                 padding: '14px 18px',
@@ -1941,7 +1941,7 @@ export default function ChatInterface() {
                             alignItems: 'center',
                             gap: '6px',
                             padding: '8px 14px',
-                            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                            background: 'linear-gradient(135deg, #000000ff 0%, #0d0217ff 100%)',
                             color: 'white',
                             border: 'none',
                             borderRadius: '8px',
@@ -2068,7 +2068,7 @@ export default function ChatInterface() {
                 background: '#f9fafb'
               }}
               onFocus={(e) => {
-                e.target.style.borderColor = '#667eea';
+                e.target.style.borderColor = '#050505ff';
                 e.target.style.background = 'white';
               }}
               onBlur={(e) => {
@@ -2110,7 +2110,7 @@ export default function ChatInterface() {
               {isLoading ? (
                 <Loader2 size={22} style={{ animation: 'spin 1s linear infinite' }} />
               ) : (
-                <Send size={22} />
+                <Send size={22} style={{ color: 'black' }} />
               )}
             </button>
           </div>
