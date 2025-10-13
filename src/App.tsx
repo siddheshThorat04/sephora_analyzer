@@ -310,7 +310,7 @@
 
 //   const exportToExcel = async (message: Message, index: number): Promise<void> => {
 //     if (!message.sql) return;
-    
+
 //     setExportingIndex(index);
 
 //     try {
@@ -532,23 +532,23 @@
 
 //   const detectChartRequest = (query: string): { shouldChart: boolean; chartType: 'bar' | 'line' | 'pie' } => {
 //     const lowerQuery = query.toLowerCase();
-    
+
 //     if (lowerQuery.includes('pie chart') || lowerQuery.includes('pie graph') || 
 //         lowerQuery.includes('distribution') || lowerQuery.includes('proportion')) {
 //       return { shouldChart: true, chartType: 'pie' };
 //     }
-    
+
 //     if (lowerQuery.includes('line chart') || lowerQuery.includes('line graph') || 
 //         lowerQuery.includes('trend') || lowerQuery.includes('over time')) {
 //       return { shouldChart: true, chartType: 'line' };
 //     }
-    
+
 //     if (lowerQuery.includes('chart') || lowerQuery.includes('graph') || 
 //         lowerQuery.includes('bar chart') || lowerQuery.includes('bar graph') ||
 //         lowerQuery.includes('visualize') ) {
 //       return { shouldChart: true, chartType: 'bar' };
 //     }
-    
+
 //     return { shouldChart: false, chartType: 'bar' };
 //   };
 
@@ -557,32 +557,32 @@
 //       console.log('No results to chart');
 //       return null;
 //     }
-    
+
 //     const keys = Object.keys(results[0]);
 //     console.log('Available columns:', keys);
 //     console.log('First row sample:', results[0]);
-    
+
 //     // Find numeric and text columns
 //     const numericCols = keys.filter(key => {
 //       const val = results[0][key];
 //       return typeof val === 'number' || (typeof val === 'string' && !isNaN(Number(val)));
 //     });
 //     const textCols = keys.filter(key => typeof results[0][key] === 'string' && isNaN(Number(results[0][key])));
-    
+
 //     console.log('Numeric columns:', numericCols);
 //     console.log('Text columns:', textCols);
-    
+
 //     if (numericCols.length === 0) {
 //       console.log('No numeric columns found');
 //       return null;
 //     }
-    
+
 //     // Use first text column as label, first numeric as value
 //     const labelKey = textCols[0] || keys[0];
 //     const valueKey = numericCols[0];
-    
+
 //     console.log('Using labelKey:', labelKey, 'valueKey:', valueKey);
-    
+
 //     const chartData = {
 //       data: results.slice(0, 20).map(row => ({
 //         name: String(row[labelKey]).substring(0, 30),
@@ -592,7 +592,7 @@
 //       labelKey,
 //       valueKey
 //     };
-    
+
 //     console.log('Chart data prepared:', chartData);
 //     return chartData;
 //   };
@@ -663,7 +663,7 @@
 
 //   const exportToExcel = async (message: Message, index: number): Promise<void> => {
 //     if (!message.sql) return;
-    
+
 //     setExportingIndex(index);
 
 //     try {
@@ -777,7 +777,7 @@
 //   return (
 //     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '20px' }}>
 //       <div style={{ maxWidth: '900px', margin: '0 auto', height: 'calc(100vh - 40px)', display: 'flex', flexDirection: 'column', background: 'white', borderRadius: '16px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', overflow: 'hidden' }}>
-        
+
 //         {/* Header */}
 //         <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '20px', color: 'white' }}>
 //           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -807,7 +807,7 @@
 //                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
 //               }}>
 //                 <p style={{ margin: 0, whiteSpace: 'pre-wrap', lineHeight: '1.5' }}>{message.content}</p>
-                
+
 //                 {renderChart(message)}
 
 //                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px', gap: '12px' }}>
@@ -1010,23 +1010,23 @@
 
 //   const detectChartRequest = (query: string): { shouldChart: boolean; chartType: 'bar' | 'line' | 'pie' } => {
 //     const lowerQuery = query.toLowerCase();
-    
+
 //     if (lowerQuery.includes('pie chart') || lowerQuery.includes('pie graph') || 
 //         lowerQuery.includes('distribution') || lowerQuery.includes('proportion')||lowerQuery.includes('compare')) {
 //       return { shouldChart: true, chartType: 'pie' };
 //     }
-    
+
 //     if (lowerQuery.includes('line chart') || lowerQuery.includes('line graph') || 
 //         lowerQuery.includes('trend') || lowerQuery.includes('over time')) {
 //       return { shouldChart: true, chartType: 'line' };
 //     }
-    
+
 //     if (lowerQuery.includes('chart') || lowerQuery.includes('graph') || 
 //         lowerQuery.includes('bar chart') || lowerQuery.includes('bar graph') ||
 //         lowerQuery.includes('visualize')|| lowerQuery.includes('top')) {
 //       return { shouldChart: true, chartType: 'bar' };
 //     }
-    
+
 //     return { shouldChart: false, chartType: 'bar' };
 //   };
 
@@ -1035,30 +1035,30 @@
 //       console.log('No results to chart');
 //       return null;
 //     }
-    
+
 //     const keys = Object.keys(results[0]);
 //     console.log('Available columns:', keys);
 //     console.log('First row sample:', results[0]);
-    
+
 //     const numericCols = keys.filter(key => {
 //       const val = results[0][key];
 //       return typeof val === 'number' || (typeof val === 'string' && !isNaN(Number(val)));
 //     });
 //     const textCols = keys.filter(key => typeof results[0][key] === 'string' && isNaN(Number(results[0][key])));
-    
+
 //     console.log('Numeric columns:', numericCols);
 //     console.log('Text columns:', textCols);
-    
+
 //     if (numericCols.length === 0) {
 //       console.log('No numeric columns found');
 //       return null;
 //     }
-    
+
 //     const labelKey = textCols[0] || keys[0];
 //     const valueKey = numericCols[0];
-    
+
 //     console.log('Using labelKey:', labelKey, 'valueKey:', valueKey);
-    
+
 //     const chartData = {
 //       data: results.slice(0, 20).map(row => ({
 //         name: String(row[labelKey]).substring(0, 30),
@@ -1068,7 +1068,7 @@
 //       labelKey,
 //       valueKey
 //     };
-    
+
 //     console.log('Chart data prepared:', chartData);
 //     return chartData;
 //   };
@@ -1138,7 +1138,7 @@
 
 //   const exportToExcel = async (message: Message, index: number): Promise<void> => {
 //     if (!message.sql) return;
-    
+
 //     setExportingIndex(index);
 
 //     try {
@@ -1220,7 +1220,7 @@
 //             {message.chartType.charAt(0).toUpperCase() + message.chartType.slice(1)} Chart Visualization
 //           </span>
 //         </div>
-        
+
 //         <div style={{ width: '100%', height: 'calc(100% - 30px)' }}>
 //           {message.chartType === 'bar' && (
 //             <ResponsiveContainer width="100%" height="100%">
@@ -1315,7 +1315,7 @@
 //   return (
 //     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '20px' }}>
 //       <div style={{ maxWidth: '900px', margin: '0 auto', height: 'calc(100vh - 40px)', display: 'flex', flexDirection: 'column', background: 'white', borderRadius: '16px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', overflow: 'hidden' }}>
-        
+
 //         {/* Header */}
 //         <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '20px', color: 'white' }}>
 //           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -1345,7 +1345,7 @@
 //                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
 //               }}>
 //                 <p style={{ margin: 0, whiteSpace: 'pre-wrap', lineHeight: '1.5' }}>{message.content}</p>
-                
+
 //                 {renderChart(message)}
 
 //                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px', gap: '12px' }}>
@@ -1516,10 +1516,620 @@
 // }
 
 
+// import React, { useState, useRef, useEffect } from 'react';
+// import { Send, Database, Loader2, Download, Sparkles, Brain } from 'lucide-react';
+// import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+// import Logo from "./Logo.png"
+// interface Message {
+//   type: 'user' | 'bot';
+//   content: string;
+//   timestamp?: Date;
+//   error?: boolean;
+//   sql?: string;
+//   query?: string;
+//   hasExport?: boolean;
+//   chartData?: any;
+//   chartType?: 'bar' | 'line' | 'pie';
+//   isThinking?: boolean;
+// }
+
+// interface QueryResponse { 
+//   answer: string;
+//   success: boolean;
+//   error?: string;
+//   sql?: string;
+//   results?: any[];
+//   rowCount?: number;
+//   hasExport?: boolean;
+//   query?: string;
+//   visualization?: {
+//     enabled: boolean;
+//     chartType?: 'bar' | 'line' | 'pie';
+//     xAxis?: string;
+//     yAxis?: string;
+//     reasoning?: string;
+//   };
+// }
+
+// const COLORS = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a', '#fee140', '#30cfd0'];
+
+// export default function ChatInterface() {
+//   const [messages, setMessages] = useState<Message[]>([
+//     {
+//       type: 'bot',
+//       content: "Hi, I'm Sherlock AI by Acumensa Tech. I'm here to help you with Instagram Analysis of Influencers."
+//     }
+//   ]);
+//   const [input, setInput] = useState<string>('');
+//   const [isLoading, setIsLoading] = useState<boolean>(false);
+//   const [exportingIndex, setExportingIndex] = useState<number | null>(null);
+//   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+//   // const BACKEND_URL = 'https://sherlockbe2-0.onrender.com'; 
+// const BACKEND_URL = 'http://localhost:3000'; 
+//   const scrollToBottom = (): void => {
+//     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+//   };
+
+//   useEffect(() => {
+//     scrollToBottom();
+//   }, [messages]);
+
+//   const prepareChartData = (results: any[], xAxis: string, yAxis: string): any => {
+//     if (!results || results.length === 0) {
+//       return null;
+//     }
+
+//     const columns = Object.keys(results[0]);
+//     const xCol = columns.find(col => col.toLowerCase() === xAxis.toLowerCase()) || xAxis;
+//     const yCol = columns.find(col => col.toLowerCase() === yAxis.toLowerCase()) || yAxis;
+
+//     console.log('Chart columns:', { xCol, yCol, available: columns });
+
+//     if (!results[0][xCol] && !results[0][yCol]) {
+//       console.log('Columns not found in data');
+//       return null;
+//     }
+
+//     const chartData = {
+//       data: results.slice(0, 20).map(row => ({
+//         name: String(row[xCol] || row[Object.keys(row)[0]]).substring(0, 30),
+//         value: Number(row[yCol] || row[Object.keys(row)[1]] || 0),
+//         fullData: row
+//       })),
+//       labelKey: xCol,
+//       valueKey: yCol
+//     };
+
+//     return chartData;
+//   };
+
+//   const sendQuery = async (): Promise<void> => {
+//     if (!input.trim() || isLoading) return;
+
+//     const userMessage: Message = {
+//       type: 'user',
+//       content: input,
+//       timestamp: new Date()
+//     };
+
+//     setMessages(prev => [...prev, userMessage]);
+
+//     const thinkingMessage: Message = {
+//       type: 'bot',
+//       content: 'Analyzing your question...',
+//       timestamp: new Date(),
+//       isThinking: true
+//     };
+//     setMessages(prev => [...prev, thinkingMessage]);
+
+//     const currentQuery = input;
+//     setInput('');
+//     setIsLoading(true);
+
+//     try {
+//       const response = await fetch(`${BACKEND_URL}/api/analytics/nl-query`, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ query: currentQuery })
+//       });
+
+//       if (!response.ok) {
+//         throw new Error(`HTTP error! status: ${response.status}`);
+//       }
+
+//       const data: QueryResponse = await response.json();
+
+//       setMessages(prev => prev.filter(msg => !msg.isThinking));
+
+//       let chartData = null;
+//       let chartType: 'bar' | 'line' | 'pie' | undefined = undefined;
+
+//       if (data.visualization?.enabled && data.results && data.results.length > 0) {
+//         chartType = data.visualization.chartType;
+//         chartData = prepareChartData(
+//           data.results, 
+//           data.visualization.xAxis || Object.keys(data.results[0])[0],
+//           data.visualization.yAxis || Object.keys(data.results[0])[1]
+//         );
+//         console.log('AI decided to show chart:', data.visualization.reasoning);
+//       }
+
+//       const botMessage: Message = {
+//         type: 'bot',
+//         content: data.success ? data.answer : `Error: ${data.error || 'Something went wrong'}`,
+//         timestamp: new Date(),
+//         error: !data.success,
+//         sql: data.sql,
+//         query: data.query || currentQuery,
+//         hasExport: data.hasExport && data.success,
+//         chartData: chartData,
+//         chartType: chartType
+//       };
+
+//       setMessages(prev => [...prev, botMessage]);
+//     } catch (error) {
+//       console.error('Error:', error);
+//       setMessages(prev => prev.filter(msg => !msg.isThinking));
+
+//       const errorMessage: Message = {
+//         type: 'bot',
+//         content: `Failed to connect to server. Please make sure the backend is running on ${BACKEND_URL}`,
+//         timestamp: new Date(),
+//         error: true
+//       };
+//       setMessages(prev => [...prev, errorMessage]);
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
+
+//   const exportToExcel = async (message: Message, index: number): Promise<void> => {
+//     if (!message.sql) return;
+
+//     setExportingIndex(index);
+
+//     try {
+//       const response = await fetch(`${BACKEND_URL}/api/analytics/export-excel`, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ 
+//           sql: message.sql,
+//           query: message.query 
+//         })
+//       });
+
+//       if (!response.ok) {
+//         throw new Error('Export failed');
+//       }
+
+//       const blob = await response.blob();
+//       const url = window.URL.createObjectURL(blob);
+//       const a = document.createElement('a');
+//       a.href = url;
+//       a.download = `query_results_${Date.now()}.xlsx`;
+//       document.body.appendChild(a);
+//       a.click();
+//       document.body.removeChild(a);
+//       window.URL.revokeObjectURL(url);
+
+//     } catch (error) {
+//       console.error('Export error:', error);
+//       alert('Failed to export data. Please try again.');
+//     } finally {
+//       setExportingIndex(null);
+//     }
+//   };
+
+//   const CustomTooltip = ({ active, payload }: any) => {
+//     if (active && payload && payload.length) {
+//       return (
+//         <div style={{ 
+//           background: 'white', 
+//           border: '2px solid #667eea', 
+//           borderRadius: '12px', 
+//           padding: '12px',
+//           boxShadow: '0 8px 24px rgba(102, 126, 234, 0.2)'
+//         }}>
+//           <p style={{ margin: '0 0 6px', fontWeight: '600', color: '#1f2937', fontSize: '13px' }}>
+//             {payload[0].payload.name}
+//           </p>
+//           <p style={{ margin: 0, color: '#667eea', fontSize: '14px', fontWeight: '600' }}>
+//             {payload[0].value.toLocaleString()}
+//           </p>
+//         </div>
+//       );
+//     }
+//     return null;
+//   };
+
+//   const renderChart = (message: Message) => {
+//     if (!message.chartData || !message.chartType) return null;
+
+//     const { data } = message.chartData;
+
+//     return (
+//       <div style={{ 
+//         width: '100%', 
+//         marginTop: '16px', 
+//         background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)', 
+//         borderRadius: '16px', 
+//         padding: '20px',
+//         border: '2px solid #e2e8f0',
+//         position: 'relative'
+//       }}>
+//         <div style={{ 
+//           display: 'flex', 
+//           alignItems: 'center', 
+//           gap: '8px', 
+//           marginBottom: '12px',
+//           padding: '8px 12px',
+//           background: 'white',
+//           borderRadius: '8px',
+//           width: 'fit-content'
+//         }}>
+//           <Sparkles size={16} color="#667eea" />
+//           <span style={{ fontSize: '13px', fontWeight: '600', color: '#667eea' }}>
+//             AI-Generated Visualization
+//           </span>
+//         </div>
+
+//         <div style={{ width: '100%', height: '320px' }}>
+//           {message.chartType === 'bar' && (
+//             <ResponsiveContainer width="100%" height="100%">
+//               <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 60 }}>
+//                 <defs>
+//                   <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+//                     <stop offset="0%" stopColor="#3a3333ff" stopOpacity={1} />
+//                     <stop offset="100%" stopColor="#d47f00ff" stopOpacity={0.8} />
+//                   </linearGradient>
+//                 </defs>
+//                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+//                 <XAxis 
+//                   dataKey="name" 
+//                   angle={-45} 
+//                   textAnchor="end" 
+//                   height={80}
+//                   tick={{ fontSize: 11, fill: '#64748b' }}
+//                 />
+//                 <YAxis tick={{ fontSize: 11, fill: '#64748b' }} />
+//                 <Tooltip content={<CustomTooltip />} />
+//                 <Bar dataKey="value" fill="url(#barGradient)" radius={[8, 8, 0, 0]} />
+//               </BarChart>
+//             </ResponsiveContainer>
+//           )}
+//           {message.chartType === 'line' && (
+//             <ResponsiveContainer width="100%" height="100%">
+//               <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 60 }}>
+//                 <defs>
+//                   <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+//                     <stop offset="0%" stopColor="#667eea" />
+//                     <stop offset="100%" stopColor="#764ba2" />
+//                   </linearGradient>
+//                 </defs>
+//                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+//                 <XAxis 
+//                   dataKey="name" 
+//                   angle={-45} 
+//                   textAnchor="end" 
+//                   height={80}
+//                   tick={{ fontSize: 11, fill: '#64748b' }}
+//                 />
+//                 <YAxis tick={{ fontSize: 11, fill: '#64748b' }} />
+//                 <Tooltip content={<CustomTooltip />} />
+//                 <Line 
+//                   type="monotone" 
+//                   dataKey="value" 
+//                   stroke="url(#lineGradient)" 
+//                   strokeWidth={3}
+//                   dot={{ fill: '#667eea', r: 5 }}
+//                   activeDot={{ r: 7, fill: '#764ba2' }}
+//                 />
+//               </LineChart>
+//             </ResponsiveContainer>
+//           )}
+//           {message.chartType === 'pie' && (
+//             <ResponsiveContainer width="100%" height="100%">
+//               <PieChart>
+//                 <Pie
+//                   data={data}
+//                   cx="50%"
+//                   cy="50%"
+//                   labelLine={true}
+//                   label={(entry: any) => `${entry.name}: ${entry.value.toLocaleString()}`}
+//                   outerRadius={100}
+//                   fill="#deb202ff"
+//                   dataKey="value"
+//                 >
+//                   {data.map((entry: any, index: number) => (
+//                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+//                   ))}
+//                 </Pie>
+//                 <Tooltip content={<CustomTooltip />} />
+//               </PieChart>
+//             </ResponsiveContainer>
+//           )}
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+//     if (e.key === 'Enter' && !e.shiftKey) {
+//       e.preventDefault();
+//       sendQuery();
+//     }
+//   };
+
+//   const exampleQueries: string[] = [
+//     "Who are the top 5 creators by views?",
+//     "whats the highest watched post",
+//     "Show me posts with highest views and by which creator",
+//     "Give me all fields for post data for brand muscleblaze"
+//   ];
+
+//   const handleExampleClick = (query: string): void => {
+//     setInput(query);
+//   };
+
+//   return (
+//     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #ffffffff 0%, #f9f9f9ff 100%)', padding: '20px' }}>
+//       <div style={{ maxWidth: '900px', margin: '0 auto', height: 'calc(100vh - 40px)', display: 'flex', flexDirection: 'column', background: 'white', borderRadius: '20px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', overflow: 'hidden' }}>
+
+//         <div style={{ background: 'linear-gradient(135deg, #f5b216ff 0%, #eb9b33ff 100%)', padding: '24px', color: 'white' }}>
+//           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+//             <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '16px', padding: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)' }}>
+//               {/* <Brain size={32} /> */}
+//                 <img src={Logo} alt="" height={100} />
+//             </div >
+//             <div>
+//               <h1 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold' }}>Sherlock AI Insta Analyzer</h1>
+//               <p style={{ margin: '4px 0   0', fontSize: '14px', opacity: 0.95 }}>Your Instagram Influencer Analyzer !</p>
+//             </div>
+//           </div>
+//         </div>
+
+//         <div style={{ flex: 1, overflowY: 'auto', padding: '24px', background: '#f9fafb' }}>
+//           {messages.map((message, index) => (
+//             <div
+//               key={index}
+//               style={{ display: 'flex', justifyContent: message.type === 'user' ? 'flex-end' : 'flex-start', marginBottom: '20px' }}
+//             >
+//               <div style={{ 
+//                 maxWidth: '80%', 
+//                 background: message.type === 'user' 
+//                   ? 'linear-gradient(135deg, #111113ff 0%, #000000ff 100%)' 
+//                   : (message.error ? '#fee2e2' : 'white'),
+//                 color: message.type === 'user' ? 'white' : (message.error ? '#991b1b' : '#1f2937'),
+//                 padding: '14px 18px',
+//                 borderRadius: '16px',
+//                 boxShadow: message.type === 'user' 
+//                   ? '0 4px 12px rgba(102, 126, 234, 0.4)' 
+//                   : '0 2px 8px rgba(0,0,0,0.1)',
+//                 position: 'relative'
+//               }}>
+//                 {message.isThinking && (
+//                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+//                     <Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} />
+//                     <span>{message.content}</span>
+//                   </div>
+//                 )}
+
+//                 {!message.isThinking && (
+//                   <>
+//                     <p style={{ margin: 0, whiteSpace: 'pre-wrap', lineHeight: '1.6', fontSize: '15px' }}>
+//                       {message.content}
+//                     </p>
+
+//                     {renderChart(message)}
+
+//                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', gap: '12px', flexWrap: 'wrap' }}>
+//                       <p style={{ margin: 0, fontSize: '11px', opacity: 0.7 }}>
+//                         {/* {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} */}
+//                       </p>
+//                       {message.hasExport && message.type === 'bot' && !message.error && (
+//                         <button
+//                           onClick={() => exportToExcel(message, index)}
+//                           disabled={exportingIndex === index}
+//                           style={{
+//                             display: 'flex',
+//                             alignItems: 'center',
+//                             gap: '6px',
+//                             padding: '8px 14px',
+//                             background: 'linear-gradient(135deg, #000000ff 0%, #0d0217ff 100%)',
+//                             color: 'white',
+//                             border: 'none',
+//                             borderRadius: '8px',
+//                             cursor: exportingIndex === index ? 'not-allowed' : 'pointer',
+//                             fontSize: '12px',
+//                             fontWeight: '600',
+//                             opacity: exportingIndex === index ? 0.6 : 1,
+//                             transition: 'all 0.3s',
+//                             boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
+//                           }}
+//                           onMouseEnter={(e) => {
+//                             if (exportingIndex !== index) {
+//                               e.currentTarget.style.transform = 'translateY(-2px)';
+//                               e.currentTarget.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.4)';
+//                             }
+//                           }}
+//                           onMouseLeave={(e) => {
+//                             if (exportingIndex !== index) {
+//                               e.currentTarget.style.transform = 'translateY(0)';
+//                               e.currentTarget.style.boxShadow = '0 2px 8px rgba(102, 126, 234, 0.3)';
+//                             }
+//                           }}
+//                         >
+//                           {exportingIndex === index ? (
+//                             <>
+//                               <Loader2 size={14} style={{ animation: 'spin 1s linear infinite' }} />
+//                               <span>Exporting...</span>
+//                             </>
+//                           ) : (
+//                             <>
+//                               <Download size={14} />
+//                               <span>Export to Excel</span>
+//                             </>
+//                           )}
+//                         </button>
+//                       )}
+//                     </div>
+//                   </>
+//                 )}
+//               </div>
+//             </div>
+//           ))}
+
+//           {isLoading && !messages.some(m => m.isThinking) && (
+//             <div style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '16px' }}>
+//               <div style={{ 
+//                 background: 'white', 
+//                 padding: '14px 18px', 
+//                 borderRadius: '16px', 
+//                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)', 
+//                 display: 'flex', 
+//                 alignItems: 'center', 
+//                 gap: '10px' 
+//               }}>
+//                 <Loader2 size={18} style={{ animation: 'spin 1s linear infinite', color: '#667eea' }} />
+//                 <p style={{ margin: 0, color: '#4b5563' }}>Thinking...</p>
+//               </div>
+//             </div>
+//           )}
+
+//           <div ref={messagesEndRef} />
+//         </div>
+
+//         {messages.length === 1 && (
+//           <div style={{ padding: '0 24px 24px', background: '#f9fafb' }}>
+//             <p style={{ margin: '0 0 14px', fontWeight: '600', color: '#4b5563', fontSize: '14px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+//               <Sparkles size={16} color="#667eea" />
+//               Try asking me:
+//             </p>
+//             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
+//               {exampleQueries.map((query, index) => (
+//                 <button
+//                   key={index}
+//                   onClick={() => handleExampleClick(query)}
+//                   style={{
+//                     padding: '12px 16px',
+//                     background: 'white',
+//                     border: '2px solid #e5e7eb',
+//                     borderRadius: '12px',
+//                     cursor: 'pointer',
+//                     textAlign: 'left',
+//                     fontSize: '13px',
+//                     transition: 'all 0.3s',
+//                     color: '#4b5563',
+//                     fontWeight: '500'
+//                   }}
+//                   onMouseEnter={(e) => {
+//                     e.currentTarget.style.background = 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)';
+//                     e.currentTarget.style.borderColor = '#667eea';
+//                     e.currentTarget.style.transform = 'translateY(-2px)';
+//                     e.currentTarget.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.15)';
+//                   }}
+//                   onMouseLeave={(e) => {
+//                     e.currentTarget.style.background = 'white';
+//                     e.currentTarget.style.borderColor = '#e5e7eb';
+//                     e.currentTarget.style.transform = 'translateY(0)';
+//                     e.currentTarget.style.boxShadow = 'none';
+//                   }}
+//                 >
+//                   {query}
+//                 </button>
+//               ))}
+//             </div>
+//           </div>
+//         )}
+
+//         <div style={{ padding: '20px 24px', background: 'white', borderTop: '2px solid #e5e7eb' }}>
+//           <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+//             <input
+//               type="text"
+//               value={input}
+//               onChange={(e) => setInput(e.target.value)}
+//               onKeyPress={handleKeyPress}
+//               placeholder="Ask me anything about your data..."
+//               disabled={isLoading}
+//               style={{
+//                 flex: 1,
+//                 padding: '14px 18px',
+//                 border: '2px solid #e5e7eb',
+//                 borderRadius: '12px',
+//                 fontSize: '15px',
+//                 outline: 'none',
+//                 transition: 'all 0.3s',
+//                 background: '#f9fafb'
+//               }}
+//               onFocus={(e) => {
+//                 e.target.style.borderColor = '#050505ff';
+//                 e.target.style.background = 'white';
+//               }}
+//               onBlur={(e) => {
+//                 e.target.style.borderColor = '#e5e7eb';
+//                 e.target.style.background = '#f9fafb';
+//               }}
+//             />
+//             <button
+//               onClick={sendQuery}
+//               disabled={!input.trim() || isLoading}
+//               style={{
+//                 padding: '14px 18px',
+//                 background: input.trim() && !isLoading 
+//                   ? 'linear-gradient(135deg, #eabb2cff 0%, #eabb2cff 100%)' 
+//                   : '#eabb2cff',
+//                 color: 'white',
+//                 border: 'none',
+//                 borderRadius: '12px',
+//                 cursor: input.trim() && !isLoading ? 'pointer' : 'not-allowed',
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 justifyContent: 'center',
+//                 transition: 'all 0.3s',
+//                 boxShadow: input.trim() && !isLoading ? '0 4px 12px rgba(102, 126, 234, 0.3)' : 'none'
+//               }}
+//               onMouseEnter={(e) => {
+//                 if (input.trim() && !isLoading) {
+//                   e.currentTarget.style.transform = 'translateY(-2px)';
+//                   e.currentTarget.style.boxShadow = '0 6px 16px rgba(102, 126, 234, 0.4)';
+//                 }
+//               }}
+//               onMouseLeave={(e) => {
+//                 if (input.trim() && !isLoading) {
+//                   e.currentTarget.style.transform = 'translateY(0)';
+//                   e.currentTarget.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.3)';
+//                 }
+//               }}
+//             >
+//               {isLoading ? (
+//                 <Loader2 size={22} style={{ animation: 'spin 1s linear infinite' }} />
+//               ) : (
+//                 <Send size={22} style={{ color: 'black' }} />
+//               )}
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+
+//       <style>{`
+//         @keyframes spin {
+//           from { transform: rotate(0deg); }
+//           to { transform: rotate(360deg); }
+//         }
+//       `}</style>
+//     </div>
+//   );
+// }
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Database, Loader2, Download, Sparkles, Brain } from 'lucide-react';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Logo from "./Logo.png"
+
 interface Message {
   type: 'user' | 'bot';
   content: string;
@@ -1529,11 +2139,11 @@ interface Message {
   query?: string;
   hasExport?: boolean;
   chartData?: any;
-  chartType?: 'bar' | 'line' | 'pie';
+  chartType?: 'bar' | 'line' | 'pie' | 'multi-line';  // ✅ Added multi-line
   isThinking?: boolean;
 }
 
-interface QueryResponse { 
+interface QueryResponse {
   answer: string;
   success: boolean;
   error?: string;
@@ -1544,9 +2154,10 @@ interface QueryResponse {
   query?: string;
   visualization?: {
     enabled: boolean;
-    chartType?: 'bar' | 'line' | 'pie';
+    chartType?: 'bar' | 'line' | 'pie' | 'multi-line';  // ✅ Added multi-line
     xAxis?: string;
     yAxis?: string;
+    groupBy?: string;  // ✅ Added groupBy
     reasoning?: string;
   };
 }
@@ -1557,7 +2168,7 @@ export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
     {
       type: 'bot',
-      content: "Hi, I'm Sherlock AI by Acumensa Tech. I'm here to help you with Instagram Analysis of Influencers."
+      content: "Hi, I'm Sherlock AI by Acumensa Tech. I'm here to help you with Instagram Analysis of Influencers."
     }
   ]);
   const [input, setInput] = useState<string>('');
@@ -1565,8 +2176,8 @@ export default function ChatInterface() {
   const [exportingIndex, setExportingIndex] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const BACKEND_URL = 'https://sherlockbe2-0.onrender.com'; 
-// const BACKEND_URL = 'http://localhost:3000'; 
+  // const BACKEND_URL = 'http://localhost:3000';
+const BACKEND_URL = 'https://sherlockbe2-0.onrender.com';
   const scrollToBottom = (): void => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -1575,35 +2186,190 @@ export default function ChatInterface() {
     scrollToBottom();
   }, [messages]);
 
-  const prepareChartData = (results: any[], xAxis: string, yAxis: string): any => {
-    if (!results || results.length === 0) {
-      return null;
-    }
-    
-    const columns = Object.keys(results[0]);
-    const xCol = columns.find(col => col.toLowerCase() === xAxis.toLowerCase()) || xAxis;
-    const yCol = columns.find(col => col.toLowerCase() === yAxis.toLowerCase()) || yAxis;
-    
-    console.log('Chart columns:', { xCol, yCol, available: columns });
-    
-    if (!results[0][xCol] && !results[0][yCol]) {
-      console.log('Columns not found in data');
-      return null;
-    }
-    
-    const chartData = {
-      data: results.slice(0, 20).map(row => ({
-        name: String(row[xCol] || row[Object.keys(row)[0]]).substring(0, 30),
-        value: Number(row[yCol] || row[Object.keys(row)[1]] || 0),
-        fullData: row
-      })),
-      labelKey: xCol,
-      valueKey: yCol
-    };
-    
-    return chartData;
-  };
+  // ✅ UPDATED: Enhanced prepareChartData with multi-line support
+  // const prepareChartData = (results: any[], visualization: any): any => {
 
+  //   console.log('🔍 prepareChartData called with:', {
+  //   resultsLength: results?.length,
+  //   visualization: visualization,
+  //   chartType: visualization?.chartType,
+  //   groupBy: visualization?.groupBy
+  // });
+  //   if (!results || results.length === 0) {
+  //     return null;
+  //   }
+
+
+  //   const { xAxis, yAxis, groupBy, chartType } = visualization;
+  // console.log('🔍 Extracted values:', { xAxis, yAxis, groupBy, chartType });
+  //   // ✅ Handle multi-line charts (trend data)
+  //   if (chartType === 'multi-line' && groupBy) {
+  //     console.log('Preparing multi-line chart data');
+  //     console.log('xAxis:', xAxis, 'yAxis:', yAxis, 'groupBy:', groupBy);
+
+  //     const groupedData: Record<string, any> = {};
+  //     const uniqueGroups = new Set<string>();
+
+  //     results.forEach((row) => {
+  //       const xValue = row[xAxis];
+  //       const yValue = row[yAxis];
+  //       const groupValue = row[groupBy];
+
+  //       uniqueGroups.add(groupValue);
+
+  //       if (!groupedData[xValue]) {
+  //         groupedData[xValue] = { [xAxis]: xValue };
+  //       }
+
+  //       groupedData[xValue][groupValue] = yValue;
+  //     });
+
+  //     // Sort by time
+  //     const chartData = Object.values(groupedData).sort((a, b) => {
+  //       const aDate = new Date(a[xAxis]);
+  //       const bDate = new Date(b[xAxis]);
+  //       return aDate.getTime() - bDate.getTime();
+  //     });
+
+  //     console.log('Multi-line chart prepared:', {
+  //       dataPoints: chartData.length,
+  //       groups: Array.from(uniqueGroups)
+  //     });
+
+  //     return {
+  //       data: chartData,
+  //       labelKey: xAxis,
+  //       valueKey: yAxis,
+  //       groups: Array.from(uniqueGroups),
+  //       groupBy: groupBy
+  //     };
+  //   }
+
+  //   // Handle regular charts
+  //   const columns = Object.keys(results[0]);
+  //   const xCol = columns.find(col => col.toLowerCase() === xAxis.toLowerCase()) || xAxis;
+  //   const yCol = columns.find(col => col.toLowerCase() === yAxis.toLowerCase()) || yAxis;
+
+  //   console.log('Chart columns:', { xCol, yCol, available: columns });
+
+  //   if (!results[0][xCol] && !results[0][yCol]) {
+  //     console.log('Columns not found in data');
+  //     return null;
+  //   }
+
+  //   const chartData = {
+  //     data: results.slice(0, 20).map(row => ({
+  //       name: String(row[xCol] || row[Object.keys(row)[0]]).substring(0, 30),
+  //       value: Number(row[yCol] || row[Object.keys(row)[1]] || 0),
+  //       fullData: row
+  //     })),
+  //     labelKey: xCol,
+  //     valueKey: yCol
+  //   };
+
+  //   return chartData;
+  // };
+
+  const prepareChartData = (results: any[], visualization: any): any => {
+  if (!results || results.length === 0) {
+    return null;
+  }
+  
+  const { xAxis, yAxis, chartType } = visualization;
+  let { groupBy } = visualization;
+  
+  // ✅ AUTO-DETECT groupBy if missing for multi-line charts
+  if (chartType === 'multi-line' && !groupBy) {
+    const columns = Object.keys(results[0]);
+    // Look for common ID columns
+    const idColumn = columns.find(col => 
+      col.toLowerCase().includes('_id') || 
+      col.toLowerCase() === 'id' ||
+      col.toLowerCase().includes('post') && col.toLowerCase().includes('id')
+    );
+    
+    if (idColumn) {
+      groupBy = idColumn;
+      console.log('✅ Auto-detected groupBy column:', groupBy);
+    }
+  }
+  
+  console.log('🔍 prepareChartData called with:', {
+    resultsLength: results?.length,
+    chartType,
+    xAxis,
+    yAxis,
+    groupBy,
+    availableColumns: Object.keys(results[0])
+  });
+  
+  // ✅ Handle multi-line charts (trend data)
+  if (chartType === 'multi-line' && groupBy) {
+    console.log('✅ ENTERING MULTI-LINE PATH');
+    
+    const groupedData: Record<string, any> = {};
+    const uniqueGroups = new Set<string>();
+
+    results.forEach((row) => {
+      const xValue = row[xAxis];
+      const yValue = row[yAxis];
+      const groupValue = row[groupBy];
+
+      uniqueGroups.add(groupValue);
+
+      if (!groupedData[xValue]) {
+        groupedData[xValue] = { [xAxis]: xValue };
+      }
+
+      groupedData[xValue][groupValue] = yValue;
+    });
+
+    // Sort by time
+    const chartData = Object.values(groupedData).sort((a, b) => {
+      const aDate = new Date(a[xAxis]);
+      const bDate = new Date(b[xAxis]);
+      return aDate.getTime() - bDate.getTime();
+    });
+
+    console.log('✅ Multi-line chart prepared:', {
+      dataPoints: chartData.length,
+      groups: Array.from(uniqueGroups),
+      sampleData: chartData[0]
+    });
+
+    return {
+      data: chartData,
+      labelKey: xAxis,
+      valueKey: yAxis,
+      groups: Array.from(uniqueGroups),
+      groupBy: groupBy
+    };
+  }
+  
+  // Handle regular charts
+  const columns = Object.keys(results[0]);
+  const xCol = columns.find(col => col.toLowerCase() === xAxis.toLowerCase()) || xAxis;
+  const yCol = columns.find(col => col.toLowerCase() === yAxis.toLowerCase()) || yAxis;
+  
+  console.log('📊 Regular chart - columns:', { xCol, yCol, available: columns });
+  
+  if (!results[0][xCol] && !results[0][yCol]) {
+    console.log('❌ Columns not found in data');
+    return null;
+  }
+  
+  const chartData = {
+    data: results.slice(0, 20).map(row => ({
+      name: String(row[xCol] || row[Object.keys(row)[0]]).substring(0, 30),
+      value: Number(row[yCol] || row[Object.keys(row)[1]] || 0),
+      fullData: row
+    })),
+    labelKey: xCol,
+    valueKey: yCol
+  };
+  
+  return chartData;
+};
   const sendQuery = async (): Promise<void> => {
     if (!input.trim() || isLoading) return;
 
@@ -1614,7 +2380,7 @@ export default function ChatInterface() {
     };
 
     setMessages(prev => [...prev, userMessage]);
-    
+
     const thinkingMessage: Message = {
       type: 'bot',
       content: 'Analyzing your question...',
@@ -1622,7 +2388,7 @@ export default function ChatInterface() {
       isThinking: true
     };
     setMessages(prev => [...prev, thinkingMessage]);
-    
+
     const currentQuery = input;
     setInput('');
     setIsLoading(true);
@@ -1645,16 +2411,14 @@ export default function ChatInterface() {
       setMessages(prev => prev.filter(msg => !msg.isThinking));
 
       let chartData = null;
-      let chartType: 'bar' | 'line' | 'pie' | undefined = undefined;
+      let chartType: 'bar' | 'line' | 'pie' | 'multi-line' | undefined = undefined;
 
+      // ✅ UPDATED: Pass full visualization object to prepareChartData
       if (data.visualization?.enabled && data.results && data.results.length > 0) {
         chartType = data.visualization.chartType;
-        chartData = prepareChartData(
-          data.results, 
-          data.visualization.xAxis || Object.keys(data.results[0])[0],
-          data.visualization.yAxis || Object.keys(data.results[0])[1]
-        );
+        chartData = prepareChartData(data.results, data.visualization);
         console.log('AI decided to show chart:', data.visualization.reasoning);
+        console.log('Chart type:', chartType);
       }
 
       const botMessage: Message = {
@@ -1668,12 +2432,16 @@ export default function ChatInterface() {
         chartData: chartData,
         chartType: chartType
       };
+      console.log('💾 Storing message with chart data:', {
+        chartType,
+        chartData
+      });
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Error:', error);
       setMessages(prev => prev.filter(msg => !msg.isThinking));
-      
+
       const errorMessage: Message = {
         type: 'bot',
         content: `Failed to connect to server. Please make sure the backend is running on ${BACKEND_URL}`,
@@ -1688,7 +2456,7 @@ export default function ChatInterface() {
 
   const exportToExcel = async (message: Message, index: number): Promise<void> => {
     if (!message.sql) return;
-    
+
     setExportingIndex(index);
 
     try {
@@ -1697,9 +2465,9 @@ export default function ChatInterface() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           sql: message.sql,
-          query: message.query 
+          query: message.query
         })
       });
 
@@ -1725,47 +2493,82 @@ export default function ChatInterface() {
     }
   };
 
-  const CustomTooltip = ({ active, payload }: any) => {
+  const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div style={{ 
-          background: 'white', 
-          border: '2px solid #667eea', 
-          borderRadius: '12px', 
+        <div style={{
+          background: 'white',
+          border: '2px solid #667eea',
+          borderRadius: '12px',
           padding: '12px',
           boxShadow: '0 8px 24px rgba(102, 126, 234, 0.2)'
         }}>
-          <p style={{ margin: '0 0 6px', fontWeight: '600', color: '#1f2937', fontSize: '13px' }}>
-            {payload[0].payload.name}
+          <p style={{ margin: '0 0 8px', fontWeight: '600', color: '#1f2937', fontSize: '12px' }}>
+            {new Date(label).toLocaleString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}
           </p>
-          <p style={{ margin: 0, color: '#667eea', fontSize: '14px', fontWeight: '600' }}>
-            {payload[0].value.toLocaleString()}
-          </p>
+          {payload.map((entry: any, index: number) => (
+            <p key={index} style={{ margin: '4px 0', color: entry.color, fontSize: '13px', fontWeight: '600' }}>
+              {entry.name}: {entry.value.toLocaleString()}
+            </p>
+          ))}
         </div>
       );
     }
     return null;
   };
 
+  // ✅ UPDATED: Enhanced renderChart with multi-line support
   const renderChart = (message: Message) => {
-    if (!message.chartData || !message.chartType) return null;
+    // ✅ UPDATED: Enhanced renderChart with mu
+    console.log('🎯 renderChart called with message:', {
+      hasChartData: !!message.chartData,
+      chartType: message.chartType,
+      chartDataStructure: message.chartData ? {
+        keys: Object.keys(message.chartData),
+        data: message.chartData.data?.length,
+        groups: message.chartData.groups,
+        groupBy: message.chartData.groupBy,
+        labelKey: message.chartData.labelKey,
+        valueKey: message.chartData.valueKey
+      } : null
+    });
 
-    const { data } = message.chartData;
+    if (!message.chartData || !message.chartType) {
+      console.log('❌ No chart data or type, returning null');
+      return null;
+    }
 
+    const { data, groups, groupBy } = message.chartData;
+
+    // Enhanced debug logging
+    console.log('🎨 Rendering chart:', {
+      chartType: message.chartType,
+      hasData: !!data,
+      hasGroups: !!groups,
+      groupsLength: groups?.length,
+      dataLength: data?.length,
+      sampleData: data?.slice(0, 2),
+      allGroups: groups
+    });
     return (
-      <div style={{ 
-        width: '100%', 
-        marginTop: '16px', 
-        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)', 
-        borderRadius: '16px', 
+      <div style={{
+        width: '100%',
+        marginTop: '16px',
+        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+        borderRadius: '16px',
         padding: '20px',
         border: '2px solid #e2e8f0',
         position: 'relative'
       }}>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '8px', 
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
           marginBottom: '12px',
           padding: '8px 12px',
           background: 'white',
@@ -1774,11 +2577,57 @@ export default function ChatInterface() {
         }}>
           <Sparkles size={16} color="#667eea" />
           <span style={{ fontSize: '13px', fontWeight: '600', color: '#667eea' }}>
-            AI-Generated Visualization
+            AI-Generated {message.chartType === 'multi-line' ? 'Trend ' : ''}Visualization
           </span>
         </div>
-        
-        <div style={{ width: '100%', height: '320px' }}>
+
+        <div style={{ width: '100%', height: '400px' }}>
+          {/* ✅ NEW: Multi-Line Chart */}
+          {message.chartType === 'multi-line' && groups && (
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 60 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                <XAxis
+                  dataKey={message.chartData.labelKey}
+                  tickFormatter={(value) => {
+                    const date = new Date(value);
+                    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                  }}
+                  angle={-45}
+                  textAnchor="end"
+                  height={80}
+                  tick={{ fontSize: 11, fill: '#64748b' }}
+                />
+                <YAxis
+                  tick={{ fontSize: 11, fill: '#64748b' }}
+                  tickFormatter={(value) => {
+                    if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
+                    if (value >= 1000) return `${(value / 1000).toFixed(1)}K`;
+                    return value.toString();
+                  }}
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Legend
+                  wrapperStyle={{ paddingTop: '20px' }}
+                  formatter={(value) => `Post ${value.substring(0, 8)}...`}
+                />
+                {groups.map((group: string, index: number) => (
+                  <Line
+                    key={group}
+                    type="monotone"
+                    dataKey={group}
+                    stroke={COLORS[index % COLORS.length]}
+                    strokeWidth={3}
+                    dot={{ r: 4 }}
+                    activeDot={{ r: 6 }}
+                    name={group}
+                  />
+                ))}
+              </LineChart>
+            </ResponsiveContainer>
+          )}
+
+          {/* Existing Bar Chart */}
           {message.chartType === 'bar' && (
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 60 }}>
@@ -1789,10 +2638,10 @@ export default function ChatInterface() {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                <XAxis 
-                  dataKey="name" 
-                  angle={-45} 
-                  textAnchor="end" 
+                <XAxis
+                  dataKey="name"
+                  angle={-45}
+                  textAnchor="end"
                   height={80}
                   tick={{ fontSize: 11, fill: '#64748b' }}
                 />
@@ -1802,7 +2651,9 @@ export default function ChatInterface() {
               </BarChart>
             </ResponsiveContainer>
           )}
-          {message.chartType === 'line' && (
+
+          {/* Existing Line Chart (single line) */}
+          {message.chartType === 'line' && !groups && (
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 60 }}>
                 <defs>
@@ -1812,19 +2663,19 @@ export default function ChatInterface() {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                <XAxis 
-                  dataKey="name" 
-                  angle={-45} 
-                  textAnchor="end" 
+                <XAxis
+                  dataKey="name"
+                  angle={-45}
+                  textAnchor="end"
                   height={80}
                   tick={{ fontSize: 11, fill: '#64748b' }}
                 />
                 <YAxis tick={{ fontSize: 11, fill: '#64748b' }} />
                 <Tooltip content={<CustomTooltip />} />
-                <Line 
-                  type="monotone" 
-                  dataKey="value" 
-                  stroke="url(#lineGradient)" 
+                <Line
+                  type="monotone"
+                  dataKey="value"
+                  stroke="url(#lineGradient)"
                   strokeWidth={3}
                   dot={{ fill: '#667eea', r: 5 }}
                   activeDot={{ r: 7, fill: '#764ba2' }}
@@ -1832,6 +2683,8 @@ export default function ChatInterface() {
               </LineChart>
             </ResponsiveContainer>
           )}
+
+          {/* Existing Pie Chart */}
           {message.chartType === 'pie' && (
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -1867,8 +2720,8 @@ export default function ChatInterface() {
 
   const exampleQueries: string[] = [
     "Who are the top 5 creators by views?",
-    "whats the highest watched post",
-    "Show me posts with highest views and by which creator",
+    "Show me the trend in views for the top 5 highest watched posts over time",
+    "Show me the trend in views for the top 2 highest watched posts over time",
     "Give me all fields for post data for brand muscleblaze"
   ];
 
@@ -1879,16 +2732,15 @@ export default function ChatInterface() {
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #ffffffff 0%, #f9f9f9ff 100%)', padding: '20px' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto', height: 'calc(100vh - 40px)', display: 'flex', flexDirection: 'column', background: 'white', borderRadius: '20px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', overflow: 'hidden' }}>
-        
+
         <div style={{ background: 'linear-gradient(135deg, #f5b216ff 0%, #eb9b33ff 100%)', padding: '24px', color: 'white' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '16px', padding: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)' }}>
-              {/* <Brain size={32} /> */}
-                <img src={Logo} alt="" height={100} />
+              <img src={Logo} alt="" height={100} />
             </div >
             <div>
               <h1 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold' }}>Sherlock AI Insta Analyzer</h1>
-              <p style={{ margin: '4px 0   0', fontSize: '14px', opacity: 0.95 }}>Your Instagram Influencer Analyzer !</p>
+              <p style={{ margin: '4px 0 0', fontSize: '14px', opacity: 0.95 }}>Your Instagram Influencer Analyzer !</p>
             </div>
           </div>
         </div>
@@ -1899,16 +2751,16 @@ export default function ChatInterface() {
               key={index}
               style={{ display: 'flex', justifyContent: message.type === 'user' ? 'flex-end' : 'flex-start', marginBottom: '20px' }}
             >
-              <div style={{ 
-                maxWidth: '80%', 
-                background: message.type === 'user' 
-                  ? 'linear-gradient(135deg, #111113ff 0%, #000000ff 100%)' 
+              <div style={{
+                maxWidth: '80%',
+                background: message.type === 'user'
+                  ? 'linear-gradient(135deg, #111113ff 0%, #000000ff 100%)'
                   : (message.error ? '#fee2e2' : 'white'),
                 color: message.type === 'user' ? 'white' : (message.error ? '#991b1b' : '#1f2937'),
                 padding: '14px 18px',
                 borderRadius: '16px',
-                boxShadow: message.type === 'user' 
-                  ? '0 4px 12px rgba(102, 126, 234, 0.4)' 
+                boxShadow: message.type === 'user'
+                  ? '0 4px 12px rgba(102, 126, 234, 0.4)'
                   : '0 2px 8px rgba(0,0,0,0.1)',
                 position: 'relative'
               }}>
@@ -1918,18 +2770,18 @@ export default function ChatInterface() {
                     <span>{message.content}</span>
                   </div>
                 )}
-                
+
                 {!message.isThinking && (
                   <>
                     <p style={{ margin: 0, whiteSpace: 'pre-wrap', lineHeight: '1.6', fontSize: '15px' }}>
                       {message.content}
                     </p>
-                    
+
                     {renderChart(message)}
 
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', gap: '12px', flexWrap: 'wrap' }}>
                       <p style={{ margin: 0, fontSize: '11px', opacity: 0.7 }}>
-                        {/* {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} */}
+                        {/* {message.timestamp?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} */}
                       </p>
                       {message.hasExport && message.type === 'bot' && !message.error && (
                         <button
@@ -1986,14 +2838,14 @@ export default function ChatInterface() {
 
           {isLoading && !messages.some(m => m.isThinking) && (
             <div style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '16px' }}>
-              <div style={{ 
-                background: 'white', 
-                padding: '14px 18px', 
-                borderRadius: '16px', 
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)', 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '10px' 
+              <div style={{
+                background: 'white',
+                padding: '14px 18px',
+                borderRadius: '16px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px'
               }}>
                 <Loader2 size={18} style={{ animation: 'spin 1s linear infinite', color: '#667eea' }} />
                 <p style={{ margin: 0, color: '#4b5563' }}>Thinking...</p>
@@ -2080,8 +2932,8 @@ export default function ChatInterface() {
               disabled={!input.trim() || isLoading}
               style={{
                 padding: '14px 18px',
-                background: input.trim() && !isLoading 
-                  ? 'linear-gradient(135deg, #eabb2cff 0%, #eabb2cff 100%)' 
+                background: input.trim() && !isLoading
+                  ? 'linear-gradient(135deg, #eabb2cff 0%, #eabb2cff 100%)'
                   : '#eabb2cff',
                 color: 'white',
                 border: 'none',
