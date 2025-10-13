@@ -2176,8 +2176,8 @@ export default function ChatInterface() {
   const [exportingIndex, setExportingIndex] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // const BACKEND_URL = 'http://localhost:3000';
-const BACKEND_URL = 'https://sherlockbe2-0.onrender.com';
+  const BACKEND_URL = 'http://localhost:3000';
+  // const BACKEND_URL = 'https://sherlockbe2-0.onrender.com';
   const scrollToBottom = (): void => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -2271,105 +2271,105 @@ const BACKEND_URL = 'https://sherlockbe2-0.onrender.com';
   // };
 
   const prepareChartData = (results: any[], visualization: any): any => {
-  if (!results || results.length === 0) {
-    return null;
-  }
-  
-  const { xAxis, yAxis, chartType } = visualization;
-  let { groupBy } = visualization;
-  
-  // ✅ AUTO-DETECT groupBy if missing for multi-line charts
-  if (chartType === 'multi-line' && !groupBy) {
-    const columns = Object.keys(results[0]);
-    // Look for common ID columns
-    const idColumn = columns.find(col => 
-      col.toLowerCase().includes('_id') || 
-      col.toLowerCase() === 'id' ||
-      col.toLowerCase().includes('post') && col.toLowerCase().includes('id')
-    );
-    
-    if (idColumn) {
-      groupBy = idColumn;
-      console.log('✅ Auto-detected groupBy column:', groupBy);
+    if (!results || results.length === 0) {
+      return null;
     }
-  }
-  
-  console.log('🔍 prepareChartData called with:', {
-    resultsLength: results?.length,
-    chartType,
-    xAxis,
-    yAxis,
-    groupBy,
-    availableColumns: Object.keys(results[0])
-  });
-  
-  // ✅ Handle multi-line charts (trend data)
-  if (chartType === 'multi-line' && groupBy) {
-    console.log('✅ ENTERING MULTI-LINE PATH');
-    
-    const groupedData: Record<string, any> = {};
-    const uniqueGroups = new Set<string>();
 
-    results.forEach((row) => {
-      const xValue = row[xAxis];
-      const yValue = row[yAxis];
-      const groupValue = row[groupBy];
+    const { xAxis, yAxis, chartType } = visualization;
+    let { groupBy } = visualization;
 
-      uniqueGroups.add(groupValue);
+    // ✅ AUTO-DETECT groupBy if missing for multi-line charts
+    if (chartType === 'multi-line' && !groupBy) {
+      const columns = Object.keys(results[0]);
+      // Look for common ID columns
+      const idColumn = columns.find(col =>
+        col.toLowerCase().includes('_id') ||
+        col.toLowerCase() === 'id' ||
+        col.toLowerCase().includes('post') && col.toLowerCase().includes('id')
+      );
 
-      if (!groupedData[xValue]) {
-        groupedData[xValue] = { [xAxis]: xValue };
+      if (idColumn) {
+        groupBy = idColumn;
+        console.log('✅ Auto-detected groupBy column:', groupBy);
       }
+    }
 
-      groupedData[xValue][groupValue] = yValue;
+    console.log('🔍 prepareChartData called with:', {
+      resultsLength: results?.length,
+      chartType,
+      xAxis,
+      yAxis,
+      groupBy,
+      availableColumns: Object.keys(results[0])
     });
 
-    // Sort by time
-    const chartData = Object.values(groupedData).sort((a, b) => {
-      const aDate = new Date(a[xAxis]);
-      const bDate = new Date(b[xAxis]);
-      return aDate.getTime() - bDate.getTime();
-    });
+    // ✅ Handle multi-line charts (trend data)
+    if (chartType === 'multi-line' && groupBy) {
+      console.log('✅ ENTERING MULTI-LINE PATH');
 
-    console.log('✅ Multi-line chart prepared:', {
-      dataPoints: chartData.length,
-      groups: Array.from(uniqueGroups),
-      sampleData: chartData[0]
-    });
+      const groupedData: Record<string, any> = {};
+      const uniqueGroups = new Set<string>();
 
-    return {
-      data: chartData,
-      labelKey: xAxis,
-      valueKey: yAxis,
-      groups: Array.from(uniqueGroups),
-      groupBy: groupBy
+      results.forEach((row) => {
+        const xValue = row[xAxis];
+        const yValue = row[yAxis];
+        const groupValue = row[groupBy];
+
+        uniqueGroups.add(groupValue);
+
+        if (!groupedData[xValue]) {
+          groupedData[xValue] = { [xAxis]: xValue };
+        }
+
+        groupedData[xValue][groupValue] = yValue;
+      });
+
+      // Sort by time
+      const chartData = Object.values(groupedData).sort((a, b) => {
+        const aDate = new Date(a[xAxis]);
+        const bDate = new Date(b[xAxis]);
+        return aDate.getTime() - bDate.getTime();
+      });
+
+      console.log('✅ Multi-line chart prepared:', {
+        dataPoints: chartData.length,
+        groups: Array.from(uniqueGroups),
+        sampleData: chartData[0]
+      });
+
+      return {
+        data: chartData,
+        labelKey: xAxis,
+        valueKey: yAxis,
+        groups: Array.from(uniqueGroups),
+        groupBy: groupBy
+      };
+    }
+
+    // Handle regular charts
+    const columns = Object.keys(results[0]);
+    const xCol = columns.find(col => col.toLowerCase() === xAxis.toLowerCase()) || xAxis;
+    const yCol = columns.find(col => col.toLowerCase() === yAxis.toLowerCase()) || yAxis;
+
+    console.log('📊 Regular chart - columns:', { xCol, yCol, available: columns });
+
+    if (!results[0][xCol] && !results[0][yCol]) {
+      console.log('❌ Columns not found in data');
+      return null;
+    }
+
+    const chartData = {
+      data: results.slice(0, 20).map(row => ({
+        name: String(row[xCol] || row[Object.keys(row)[0]]).substring(0, 30),
+        value: Number(row[yCol] || row[Object.keys(row)[1]] || 0),
+        fullData: row
+      })),
+      labelKey: xCol,
+      valueKey: yCol
     };
-  }
-  
-  // Handle regular charts
-  const columns = Object.keys(results[0]);
-  const xCol = columns.find(col => col.toLowerCase() === xAxis.toLowerCase()) || xAxis;
-  const yCol = columns.find(col => col.toLowerCase() === yAxis.toLowerCase()) || yAxis;
-  
-  console.log('📊 Regular chart - columns:', { xCol, yCol, available: columns });
-  
-  if (!results[0][xCol] && !results[0][yCol]) {
-    console.log('❌ Columns not found in data');
-    return null;
-  }
-  
-  const chartData = {
-    data: results.slice(0, 20).map(row => ({
-      name: String(row[xCol] || row[Object.keys(row)[0]]).substring(0, 30),
-      value: Number(row[yCol] || row[Object.keys(row)[1]] || 0),
-      fullData: row
-    })),
-    labelKey: xCol,
-    valueKey: yCol
+
+    return chartData;
   };
-  
-  return chartData;
-};
   const sendQuery = async (): Promise<void> => {
     if (!input.trim() || isLoading) return;
 
@@ -2493,34 +2493,80 @@ const BACKEND_URL = 'https://sherlockbe2-0.onrender.com';
     }
   };
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
-    if (active && payload && payload.length) {
-      return (
-        <div style={{
-          background: 'white',
-          border: '2px solid #667eea',
-          borderRadius: '12px',
-          padding: '12px',
-          boxShadow: '0 8px 24px rgba(102, 126, 234, 0.2)'
-        }}>
-          <p style={{ margin: '0 0 8px', fontWeight: '600', color: '#1f2937', fontSize: '12px' }}>
-            {new Date(label).toLocaleString('en-US', {
-              month: 'short',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit'
-            })}
+  // const CustomTooltip = ({ active, payload, label }: any) => {
+  //   if (active && payload && payload.length) {
+  //     return (
+  //       <div style={{
+  //         background: 'white',
+  //         border: '2px solid #667eea',
+  //         borderRadius: '12px',
+  //         padding: '12px',
+  //         boxShadow: '0 8px 24px rgba(102, 126, 234, 0.2)'
+  //       }}>
+  //         <p style={{ margin: '0 0 8px', fontWeight: '600', color: '#1f2937', fontSize: '12px' }}>
+  //           {new Date(label).toLocaleString('en-US', {
+  //             month: 'short',
+  //             day: 'numeric',
+  //             hour: '2-digit',
+  //             minute: '2-digit'
+  //           })}
+  //         </p>
+  //         {payload.map((entry: any, index: number) => (
+  //           <p key={index} style={{ margin: '4px 0', color: entry.color, fontSize: '13px', fontWeight: '600' }}>
+  //             {entry.name}: {entry.value.toLocaleString()}
+  //           </p>
+  //         ))}
+  //       </div>
+  //     );
+  //   }
+  //   return null;
+  // };
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    const date = parseCustomDate(label);
+    const formattedLabel = date 
+      ? date.toLocaleString('en-US', { 
+          month: 'short', 
+          day: 'numeric',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      : label;
+    
+    return (
+      <div style={{ 
+        background: 'white', 
+        border: '2px solid #667eea', 
+        borderRadius: '12px', 
+        padding: '12px',
+        boxShadow: '0 8px 24px rgba(102, 126, 234, 0.2)'
+      }}>
+        <p style={{ margin: '0 0 8px', fontWeight: '600', color: '#1f2937', fontSize: '12px' }}>
+          {formattedLabel}
+        </p>
+        {payload.map((entry: any, index: number) => (
+          <p key={index} style={{ margin: '4px 0', color: entry.color, fontSize: '13px', fontWeight: '600' }}>
+            {entry.name}: {entry.value.toLocaleString()}
           </p>
-          {payload.map((entry: any, index: number) => (
-            <p key={index} style={{ margin: '4px 0', color: entry.color, fontSize: '13px', fontWeight: '600' }}>
-              {entry.name}: {entry.value.toLocaleString()}
-            </p>
-          ))}
-        </div>
-      );
+        ))}
+      </div>
+    );
+  }
+  return null;
+};
+
+  const parseCustomDate = (dateString: string): Date | null => {
+    try {
+      // Remove ordinal suffixes (st, nd, rd, th)
+      const cleanedDate = dateString.replace(/(\d+)(st|nd|rd|th)/, '$1');
+      const date = new Date(cleanedDate);
+      return isNaN(date.getTime()) ? null : date;
+    } catch {
+      return null;
     }
-    return null;
   };
+
 
   // ✅ UPDATED: Enhanced renderChart with multi-line support
   const renderChart = (message: Message) => {
@@ -2590,8 +2636,15 @@ const BACKEND_URL = 'https://sherlockbe2-0.onrender.com';
                 <XAxis
                   dataKey={message.chartData.labelKey}
                   tickFormatter={(value) => {
-                    const date = new Date(value);
-                    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    const date = parseCustomDate(value);
+                    if (date) {
+                      return date.toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: 'numeric'
+                      });
+                    }
+                    return String(value).substring(0, 10);
                   }}
                   angle={-45}
                   textAnchor="end"
@@ -2720,7 +2773,7 @@ const BACKEND_URL = 'https://sherlockbe2-0.onrender.com';
 
   const exampleQueries: string[] = [
     "Who are the top 5 creators by views?",
-    "Show me the trend in views for the top 5 highest watched posts over time",
+    "List the posts with highest engagement rate",
     "Show me the trend in views for the top 2 highest watched posts over time",
     "Give me all fields for post data for brand muscleblaze"
   ];
