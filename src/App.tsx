@@ -2786,15 +2786,17 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #ffffffff 0%, #f9f9f9ff 100%)', padding: '20px' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto', height: 'calc(100vh - 40px)', display: 'flex', flexDirection: 'column', background: 'white', borderRadius: '20px', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', overflow: 'hidden' }}>
 
-        <div style={{ background: 'linear-gradient(135deg, #f5b216ff 0%, #eb9b33ff 100%)', padding: '24px', color: 'white' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{   background: 'linear-gradient(135deg, #f5b216ff 0%, #eb9b33ff 100%)', padding: '24px', color: 'white' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' , justifyContent:'space-between' }}>
             <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '16px', padding: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(10px)' }}>
               <img src={Logo} alt="" height={100} />
             </div >
             <div>
               <h1 style={{ margin: 0, fontSize: '26px', fontWeight: 'bold' }}>Sherlock AI Insta Analyzer</h1>
               <p style={{ margin: '4px 0 0', fontSize: '14px', opacity: 0.95 }}>Your Instagram Influencer Analyzer !</p>
+
             </div>
+              <img src="https://acumensa.co/SherlockBrandLogo_113x39.png" height={39} width={113} alt="" />
           </div>
         </div>
 
