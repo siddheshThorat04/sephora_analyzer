@@ -192,15 +192,17 @@ export default function SephoraStockChecker() {
 
         {/* Header */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #eab90aff 0%, #eab90aff 100%)', 
+          background: 'linear-gradient(135deg, #f5b216ff 0%, #f5b216ff 100%)', 
           padding: '24px', 
           color: 'white' 
+
         }}>
           <div style={{ 
             display: 'flex', 
             alignItems: 'center', 
             gap: '16px',
             justifyContent: 'space-between'
+
           }}>
             <div style={{ 
               background: 'rgba(255,255,255,0.1)', 
@@ -219,7 +221,11 @@ export default function SephoraStockChecker() {
                 fontSize: '26px', 
                 fontWeight: 'bold',
                 letterSpacing: '-0.5px',
-                color: '#111827'
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px'
               }}>
                 Sephora Stock Checker
               </h1>
@@ -227,7 +233,11 @@ export default function SephoraStockChecker() {
                 margin: '4px 0 0', 
                 fontSize: '14px', 
                 opacity: 0.9 ,
-                color: '#374151'
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px'
 
               }}>
                 Check product availability and store inventory
