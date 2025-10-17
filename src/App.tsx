@@ -192,7 +192,7 @@ export default function SephoraStockChecker() {
 
         {/* Header */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)', 
+          background: 'linear-gradient(135deg, #eab90aff 0%, #eab90aff 100%)', 
           padding: '24px', 
           color: 'white' 
         }}>
@@ -218,14 +218,17 @@ export default function SephoraStockChecker() {
                 margin: 0, 
                 fontSize: '26px', 
                 fontWeight: 'bold',
-                letterSpacing: '-0.5px'
+                letterSpacing: '-0.5px',
+                color: '#111827'
               }}>
                 Sephora Stock Checker
               </h1>
               <p style={{ 
                 margin: '4px 0 0', 
                 fontSize: '14px', 
-                opacity: 0.9 
+                opacity: 0.9 ,
+                color: '#374151'
+
               }}>
                 Check product availability and store inventory
               </p>
@@ -239,8 +242,7 @@ export default function SephoraStockChecker() {
               borderRadius: '12px',
               backdropFilter: 'blur(10px)'
             }}>
-              <Store size={20} />
-              <span style={{ fontSize: '13px', fontWeight: '600' }}>Live Inventory</span>
+              <img src="https://acumensa.co/SherlockBrandLogo_113x39.png" height='39px' width="112px" alt="" />
             </div>
           </div>
         </div>
