@@ -581,8 +581,8 @@ export default function SephoraStockChecker() {
   const [exportingIndex, setExportingIndex] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const BACKEND_URL = 'http://localhost:8000';
-  // const BACKEND_URL = 'https://sephora-backend-n1qr.onrender.com';
+  // const BACKEND_URL = 'http://localhost:8000';
+  const BACKEND_URL = 'https://sephora-backend-n1qr.onrender.com';
 
   const scrollToBottom = (): void => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
