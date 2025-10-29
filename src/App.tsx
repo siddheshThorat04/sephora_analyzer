@@ -35,8 +35,8 @@ export default function SephoraStockChecker() {
   const [exportingIndex, setExportingIndex] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // const BACKEND_URL = 'http://localhost:8000';
-  const BACKEND_URL = 'https://sephora-backend-n1qr.onrender.com';
+  const BACKEND_URL = 'http://localhost:8000';
+  // const BACKEND_URL = 'https://sephora-backend-n1qr.onrender.com';
 
   const scrollToBottom = (): void => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -160,12 +160,10 @@ export default function SephoraStockChecker() {
   };
 
   const exampleQueries: string[] = [
-    "Check stock for 2892438 products in zipcode 98007",
-    "Show me all available Rare Beauty items in 90210",
-    "Show me all out of stock stores in zipcode 10036?",
-    "List all out of stock products in my area 94102",
-    "Find all stores in zipcode 98007",
-    "Show me Huda Beauty product availability"
+    "Check stock for 2805869 products in zipcode 90210",
+    "Show me all Range Beauty items products",
+    "Show me all out of stock stores in zipcode 90210",
+    "List all inventory in my area 90087"
   ];
 
   const handleExampleClick = (query: string): void => {
